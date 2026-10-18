@@ -157,3 +157,61 @@ a{color:inherit}
 .nav-links a[aria-current="page"]{text-decoration-thickness:3px}
 input,button{font-family:inherit}
 input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #51b30b;outline-offset:2px}
+
+/* ---------- Terms and Conditions Page ---------- */
+
+.terms-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.terms-container h1 {
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.terms-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.terms-content {
+    margin-top: 40px;
+}
+
+.terms-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.terms-content p {
+    margin-bottom: 15px;
+}
+
+/* Terms Page Footer */
+.terms-page-footer {
+    padding: 25px;
+    text-align: center;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .terms-container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .terms-container h1 {
+        font-size: 28px;
+    }
+
+    .terms-content h2 {
+        font-size: 20px;
+    }
+}
+
