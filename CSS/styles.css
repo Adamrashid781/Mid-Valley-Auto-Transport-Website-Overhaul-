@@ -239,3 +239,9 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #51b3
   .reset-card h1{width:auto}
   .reset-card input{width:100%}
 }
+
+/* Reset password: new password page */
+.reset-new{background:var(--bg) 22% 40%/129% auto no-repeat;align-items:center}
+.reset-new .reset-card{padding-top:88px}
+.reset-new .reset-card input+label+input{margin-top:55px}
+.reset-new .submit{margin-top:26px}
