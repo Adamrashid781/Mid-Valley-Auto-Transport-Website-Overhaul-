@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Get A Quote | Mid Valley Auto Transport Inc.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="quote">
+    <div class="page">
+        <header class="site-header light">
+            <nav class="nav" aria-label="Main">
+                <a class="nav-logo" href="index.html">
+                    <img src="assets/nav-logo-color.png" width="433" height="158" alt="Mid Valley Auto Transport Inc. - Home">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="getquote.html" aria-current="page">Get A Quote</a></li>
+                    <li><a href="termsandconditions.html">Terms &amp; Conditions</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+                <a class="nav-cta" href="contact.html">CONTACT</a>
+            </nav>
+        </header>
+        <main class="quote-main" style="--bg:url(../assets/quote-bg.png)">
+            <h1 class="visually-hidden">Get A Quote</h1>
+            <!--TODO: Add backend funtionality; set an action to the quote endpoint-->
+            <form class="q-form" action="" method="post">
+                <fieldset class="q-user">
+                    <legend class="visually-hidden">Your information</legend>
+                    <div>
+                        <label for="q-first">First Name</label>
+                        <input id="q-first" name="first_name" type="text" autocomplete="given-name" placeholder="Enter" required>
+                    </div>
+                    <div>
+                        <label for="q-last">Last Name</label>
+                        <input id="q-last" name="last_name" type="text" autocomplete="family-name" placeholder="Last" required>
+                    </div>
+                    <div class="wide">
+                        <label for="q-email">Email</label>
+                        <input id="q-email" name="email" type="email" autocomplete="email" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <label for="q-phone">Phone</label>
+                        <input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="Number" required>
+                    </div>
+                </fieldset>
+                <div class="q-locs">
+                    <fieldset class="q-lock pick">
+                        <legend>Pick Up Location</legend>
+                        <label for="pickup-street">Street Address</label>
+                         <input id="pickup-street" name="pickup_street" type="text" autocomplete="section-pickup street-address" required>
+                        <label for="pickup-city">City</label>
+                         <input id="pickup-city" name="pickup_city" type="text" autocomplete="section-pickup address-level2" required>
+                        <label for="pickup-state">State</label>
+                         <input id="pickup-state" name="pickup_state" type="text" autocomplete="section-pickup address-level1" required>
+                        <label for="pickup-zip">Zip Code</label>
+                         <input id="pickup-zip" name="pickup_zip" type="text" autocomplete="section-pickup postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" required>
+                    </fieldset>
+                    <fieldset class="q-loc drop">
+                        <legend>Drop Off Location</legend>
+                        <label for="dropoff-street">Street Address</label>
+                         <input id="dropoff-street" name="dropoff_street" type="text" autocomplete="section-dropoff street-address" required>
+                        <label for="dropoff-city">City</label>
+                         <input id="dropoff-city" name="dropoff_city" type="text" autocomplete="section-dropoff address-level2" required>
+                        <label for="dropoff-state">State</label>
+                         <input id="dropoff-state" name="dropoff_state" type="text" autocomplete="section-dropoff address-level1" required>
+                        <label for="dropoff-zip">Zip Code</label>
+                         <input id="dropoff-zip" name="dropoff_zip" type="text" autocomplete="section-dropoff postal-code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" required>
+                    </fieldset>
+                </div>
+                <fieldset class="q-vehicle">
+                    <legend class="visually-hidden">Vehicle information</legend>
+                    <label class="pill vin">
+                        <span>VIN:</span>
+                        <input name="vin" type="text" maxlength="17" autocapitalize="characters">
+                    </label>
+                    <label class="pill year">
+                        <span>YEAR:</span>
+                        <input name="year" type="number" min="1800" max="2200" inputmode="numeric"> <!--extended the year bounds just in case there is a really old car, or if this code lasts a really long time-->
+                    </label>
+                    <label class="pill make">
+                        <span>MAKE:</span>
+                        <input name="make" type="text" required>
+                    </label>
+                    <label class="pill model">
+                        <span>MODEL:</span>
+                        <input name="model" type="text" required>
+                    </label>
+                </fieldset>
+                <button type="submit" class="btn-black q-submit">SUBMIT</button>
+            </form>
+        </main>
+        <footer class="site-footer compact"> <!--this is just a compact vers. of the footer from the home page, it just doesn't have the "ready for us to get to work" part-->
+            <div class="footer-inner">
+                <div class="footer-cols">
+                    <div class="footer-brand">
+                        <p><a href="index.html">Mid Valley Auto<br>Transport Inc.</a></p>
+                        <img src="assets/footer-logo.png" width="353" height="253" alt="Mid Valley Auto Transport Inc. logo">
+                    </div>
+                    <div class="footer-col col-company">
+                        <h3>COMPANY</h3>
+                        <ul>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="getquote.html">Get A Quote</a></li>
+                            <li><a href="termsandconditions.html">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-legal">
+                        <h3>LEGAL</h3>
+                        <ul>
+                            <li><a href="termsandconditions.html">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-contact">
+                        <h3>CONTACT</h3>
+                        <address>
+                            <a href="mailto:info@midvalleyauto.net">info@midvalleyauto.net</a>
+                            <br>
+                            <a href="tel:510-557-8312">Tel: 510-557-8312</a>
+                            <br>
+                            18 Oak St #2126
+                            <br>
+                            Brentwood, CA&nbsp; 94513
+                        </address>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
