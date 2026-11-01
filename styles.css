@@ -215,3 +215,22 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #51b3
     }
 }
 
+/* ---------- About Us Page---------- */
+
+/* This covers the story section */
+.g{color:var(--green-terms)}
+.about-hero{position:relative;margin-top:61px;height:768px;overflow:hidden;color:#fff}
+.about-hero-bg{position:absolute;left:-25px;top:0;width:2048px;max-width:none;height:768px;object-fit:cover}
+.about-hero-text{position:relative;padding:90px 0 0 100px}
+.kicker-line{display:flex;align-items:center;gap:0;font-size:48px;font-weight:400}
+.kicker-line img{margin-left:22px}
+.about-hero h1{font-weight:700;font-size:64px;margin-top:12px}
+.about-hero .bar{margin:28px 0 0 11px}
+.about-hero-copy{font-weight:600;font-size:32px;width:350px;margin:43px 0 0 11px}
+.story{display:flex;justify-content:space-between;align-items:flex-start;padding:61px 235px 0 105px;min-height:1148px}
+.story .kicker-line.dark{color:#000}
+.story h2{font-weight:700;font-size:64px;margin-top:12px}
+.story .bar{margin-top:20px}
+.story-copy{font-weight:600;font-size:24px;width:661px;margin:58px 0 0 1px}
+.story-copy p+p{margin-top:29px}
+.founder{width:511px;height:763px;object-fit:cover;margin-top:91px;flex:0 0 auto}
