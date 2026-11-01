@@ -158,60 +158,223 @@ a{color:inherit}
 input,button{font-family:inherit}
 input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #51b30b;outline-offset:2px}
 
-/* ---------- Terms and Conditions Page ---------- */
 
-.terms-container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 30px;
+/* Terms and Conditions Page */
+
+.terms-main {
+    position: relative;
+    padding-bottom: 0;
 }
 
-.terms-container h1 {
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 20px;
+.terms-title {
+    font-family: var(--inst, "Instrument Sans", sans-serif);
+    font-size: 96px;
+    margin: 130px 0 0 294px;
 }
 
-.terms-container p {
-    font-size: 18px;
-    line-height: 1.6;
+.terms-sub {
+    font-family: var(--inst, "Instrument Sans", sans-serif);
+    font-size: 32px;
+    margin: 81px 0 0 684px;
+    white-space: pre-line;
 }
 
-.terms-content {
+.terms-layout {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 94px;
+    gap: 111px;
+}
+
+/* photo placeholder */
+.terms-img {
+    width: 431px;
+    height: 1477px;
+    flex: 0 0 auto;
+}
+
+/* Terms content card */
+.terms-card {
+    width: 1018px;
+    min-height: 1849px;
     margin-top: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 27px 45px 40px 29px;
+    font-family: var(--inst, "Instrument Sans", sans-serif);
+    font-size: 24px;
 }
 
 .terms-content h2 {
+    color: var(--green-terms, #51b30b);
+    text-decoration: underline;
     font-size: 24px;
-    font-weight: 600;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin: 30px 0 15px;
 }
 
 .terms-content p {
-    margin-bottom: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* Terms Page Footer */
+.terms-content ul {
+    padding-left: 36px;
+    list-style: disc;
+}
+
+/* Terms Page Navigation */
+
+.terms .nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px 0 18px;
+}
+
+.terms .nav-logo {
+    flex: 0 0 220px;
+    width: 220px;
+    margin: 0;
+    align-self: center;
+}
+
+.terms .nav-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.terms .nav-links {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+}
+
+.terms .nav-links a {
+    font-size: clamp(14px, 1.5vw, 24px);
+    white-space: nowrap;
+}
+
+.terms .nav-cta {
+    flex: 0 0 180px;
+    width: 180px;
+    height: 65px;
+    margin-left: auto;
+    font-size: 26px;
+}
+
 .terms-page-footer {
-    padding: 25px;
+    padding: 30px 20px;
     text-align: center;
+    margin-top: 0;
 }
 
-/* Responsive Layout */
-@media (max-width: 768px) {
-    .terms-container {
-        margin: 20px auto;
-        padding: 20px;
+
+@media (max-width: 1600px) {
+    .terms-title {
+        margin-left: 94px;
     }
 
-    .terms-container h1 {
-        font-size: 28px;
+    .terms-sub {
+        margin-left: 94px;
+    }
+
+    .terms-layout {
+        gap: 48px;
+    }
+
+    .terms-card {
+        flex: 1;
+        width: auto;
+    }
+}
+
+@media (max-width: 1100px) {
+    .terms-title {
+        font-size: 56px;
+        margin: 60px 20px 0;
+    }
+
+    .terms-sub {
+        font-size: 22px;
+        margin: 30px 20px;
+    }
+
+    .terms-layout {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .terms-img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .terms-card {
+        width: 100%;
+        min-height: 0;
+        margin-top: 0;
+        font-size: 18px;
     }
 
     .terms-content h2 {
+        font-size: 18px;
+    }
+
+    .terms .nav {
+        flex-wrap: wrap;
+        padding: 12px 20px;
+    }
+
+    .terms .nav-logo {
+        flex-basis: 180px;
+        width: 180px;
+    }
+
+    .terms .nav-links {
+        order: 3;
+        flex: 0 0 100%;
+        justify-content: flex-start;
+    }
+
+    .terms .nav-cta {
+        flex: 0 0 140px;
+        width: 140px;
+        height: 52px;
         font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .terms-title {
+        font-size: 36px;
+        margin: 30px 16px 0;
+    }
+
+    .terms-sub {
+        font-size: 16px;
+        margin: 20px 16px;
+    }
+
+    .terms-card {
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    .terms-content h2 {
+        font-size: 18px;
+    }
+
+    .terms .nav-links a {
+        font-size: 14px;
     }
 }
 
