@@ -234,3 +234,12 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #51b3
 .story-copy{font-weight:600;font-size:24px;width:661px;margin:58px 0 0 1px}
 .story-copy p+p{margin-top:29px}
 .founder{width:511px;height:763px;object-fit:cover;margin-top:91px;flex:0 0 auto}
+
+/* This covers the customer review section */
+.testimonials{position:relative;background:#111;overflow:hidden;padding:56px 0 120px;min-height:1505px}
+.testimonials-bg{position:absolute;left:50%;top:50%;width:2327px;height:1508px;max-width:none;object-fit:cover;opacity:.9;transform:translate(calc(-50% + 204px),-50%)}
+.testimonials h2{position:relative;text-align:center;color:#f7f4f4;font-size:64px;padding-right:110px}
+.t-grid{position:relative;display:grid;grid-template-columns:repeat(3,440px);justify-content:center;gap:73px 58px;margin:42px 0 0 -45px}
+.t-card{margin:0;background:#70dc75;border:1px solid rgba(0,0,0,.5);border-radius:50px;height:600px;padding:56px 35px 40px;display:flex;flex-direction:column;justify-content:center;font-size:20px;color:#000}
+.t-card p+p{margin-top:24px}
+.t-card figcaption{font-weight:600;text-align:center;margin-top:24px}
