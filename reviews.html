@@ -30,24 +30,88 @@
         <main class="photo-main reviews-main" style="--bg:url(../assets/review-bg-png)">
             <h1 class="visually-hidden">Customer Reviews</h1>
             <div class="r-carousel">
-                <button type="button" class="r-arrows prev" aria-label="Previous reviews">
+                <button id="left_arrow_btn" type="button" class="r-arrows prev" aria-label="Previous reviews">
                     <img src="assets/reviews-arrow-left.svg" width="187" height="57.74" alt="">
                 </button>
                 <div class="r-track">
                     <figure class="r-card">
-                        <blockquote><p>Shipped my Civic from Sacramento to Austin and it arrived a day early without a scratch. The driver called ahead both times. Would book again.</p></blockquote>
-                        <figcaption>-Jessica M.<br>Sacramento, CA</figcaption>
+                        <blockquote><p id="block-A-text">Shipped my Civic from Sacramento to Austin and it arrived a day early without a scratch. The driver called ahead both times. Would book again.</p></blockquote>
+                        <figcaption id="caption-A">-Jessica M.<br>Sacramento, CA</figcaption>
                         <img class="stars" src="assets/reviews-stars.svg" width="491" height="61" alt="5 out of 5 stars">
                     </figure>
                     <figure class="r-card">
-                        <blockquote><p>Easy Quote, fair price, no surprises</p></blockquote>
-                        <figcaption>-Daniel R.<br>Roseville, CA</figcaption>
+                        <blockquote><p id="block-B-text">Easy Quote, fair price, no surprises</p></blockquote>
+                        <figcaption id="caption-B">-Daniel R.<br>Roseville, CA</figcaption>
                         <img class="stars" src="assets/reviews-stars.svg" width="491" height="61" alt="5 out of 5 stars">
                     </figure>
                 </div>
-                <button type="button" class="r-arrow next" aria-label="Next Reviews">
+                <button id="right_arrow_btn" type="button" class="r-arrow next" aria-label="Next Reviews">
                     <img src="assets/reviews-arrow-right.svg" width="187" height="57.74" alt="">
                 </button>
+                <!--this is the script for the arrow buttons to change the reviews-->
+                <script>
+                    //list of block quote review text (goes by pair of 2s):
+                    const blockReviews = [
+                        "Shipped my Civic from Sacramento to Austin and it arrived a day early without a scratch. The driver called ahead both times. Would book again.",
+                        "Easy Quote, fair price, no surprises",
+                        "Customer service was outstanding. Every time I called, someone actually picked up and knew where my car was.",
+                        "Moved two vehicles for our family relocation to Oregon. Coordinated everything so both arrived the same day.",
+                        "Fast, friendly, reliable. Five stars.",
+                        "I got quotes from four companies. Mid Valley wasn't the cheapest, but they were the most transparent, and that's why I picked them. Zero regrets.",
+                        "I was nervous about shipping my car cross-country for a job move, but the team walked me through every step. Updates were consistent and the pickup window was exactly what they promised.",
+                        "Professional from start to finish. The driver took photos at pickup and delivery, which gave me real peace of mind.",
+                        "Dealer purchase out of state and they handled pickup directly from the dealership. Saved me a flight and a 12-hour drive.",
+                        "Driver was courteous and careful loading my SUV. Delivery was right on schedule.",
+                        "Second time using Mid Valley and they've been great both times. Highly recommend.",
+                        "Needed a classic truck moved to Arizona. They used enclosed transport and treated it like it was their own.",
+                        "Shipped my car home after graduation. Affordable for a student budget and super responsive on the phone.",
+                        "Clear communication, on-time pickup, smooth delivery. That's all you want from a transport company."
+                    ];
+                    //list of figcaption review text (also pairs of 2):
+                    const captionReviews = [
+                        "-Jessica M.<br>Sacramento, CA",
+                        "-Daniel R.<br>Roseville, CA",
+                        "-Angela P.<br>Lodi, CA",
+                        "-Ryan D.<br>Citrus Heights, Ca",
+                        "-Sofia G.<br>Turlock, CA",
+                        "-Brain H.<br>Rancho Cordova, Ca",
+                        "-Priya S.<br>Elk Grove, CA",
+                        "-Marcus T.<br>Stockton, Ca",
+                        "-Nadia A.<br>West Sacramento, CA",
+                        "-Tom B.<br>Manteca, Ca",
+                        "-Linda K.<br>Modesto, CA",
+                        "-Carlos V.<br>Fresno, Ca",
+                        "-Hannah W.<br>Davis, CA",
+                        "-Kevin L.<br>Folsom, Ca"
+                    ];
+                    //variables
+                    let currentIndex = 0;
+                    const blockTextElementA = document.getElementById("block-A-text");
+                    const blockTextElementB = document.getElementById("block-B-text");
+                    const captionTextElementA = document.getElementById("caption-A");
+                    const captionTextElementB = document.getElementById("caption-B");
+                    const rightArrowBTN = document.getElementById("right_arrow_btn");
+                    const leftArrowBTN = document.getElementById("left_arrow_btn");
+
+                    function replaceText(){
+                        //update block text
+                        blockTextElementA.textContent = blockReviews[currentIndex];
+                        blockTextElementB.textContent = blockReviews[currentIndex+1];
+                        //update caption text
+                        captionTextElementA.innerHTML = captionReviews[currentIndex]; //use innerHTML instead of textContent so that the <br> works
+                        captionTextElementB.innerHTML = captionReviews[currentIndex+1];
+                    }
+
+                    //button listening
+                    rightArrowBTN.addEventListener("click", () =>{ //right button (for incrementing reviews)
+                        currentIndex = (currentIndex+2)%blockReviews.length; //will loop back to 0 at end, can use either list lengths (they are the same)
+                        replaceText();
+                    });
+                    leftArrowBTN.addEventListener("click", () =>{ //left arrow (for decrementing reviews)
+                        currentIndex = (currentIndex-2+blockReviews.length)%blockReviews.length; //will allow index wrapping
+                        replaceText();
+                    });
+                </script>
             </div>
         </main>
     </div>
