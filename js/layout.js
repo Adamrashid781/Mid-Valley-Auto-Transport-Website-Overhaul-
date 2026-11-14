@@ -6,3 +6,11 @@ const NAV_LINKS = [
   ["reviews.html", "Reviews"],
   ["account.html", "Account"],
 ];
+
+
+
+
+
+
+customElements.define("site-header", SiteHeader);
+customElements.define("site-footer", SiteFooter);
