@@ -13,7 +13,7 @@ a{color:inherit}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 /* test */
 /* ---------- Header / nav ---------- */
-.site-header{position:sticky;top:0;z-index:100;height:164px}
+.site-header{position:static;top:0;z-index:100;height:164px}
 .site-header.dark{background:#000;color:#fff}
 .nav{height:100%;display:flex;align-items:center;padding:0 77px 0 18px;gap:24px}
 .nav-logo{flex:0 0 auto;width:340px;align-self:flex-start;margin-top:11px}
@@ -437,229 +437,74 @@ input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #51b3
 .t-card p+p{margin-top:24px}
 .t-card figcaption{font-weight:600;text-align:center;margin-top:24px}
 
-/* Services Page */
-
-.services .svc-hero {
-    position: relative;
-    height: 650px;
-    overflow: hidden;
-    background: #111;
-    color: #fff;
-}
-
-.services .svc-hero-bg {
-    position: absolute;
-    inset: 0;
+/* This section is for the reviews page styling*/
+.reviews-main{
+    min-height: 1674px;
+    align-items: flex-start;
     width: 100%;
-    height: 100%;
     max-width: none;
-    object-fit: cover;
+    margin: 0;
+    padding-top: 0;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-
-.services .svc-hero-text {
+.r-carousel{
     position: relative;
-    z-index: 1;
-    padding: 100px 70px;
-    max-width: 610px;
-}
-
-.services .svc-hero h1 {
-    font-family: var(--inter, "Inter", sans-serif);
-    font-size: 76px;
-    font-weight: 700;
-    margin: 0 0 20px;
-}
-
-.services .svc-hero p {
-    font-size: 26px;
-    line-height: 1.4;
-    max-width: 500px;
-    margin: 0 0 25px;
-}
-
-.services .svc-hero-text img {
-    width: 228px;
-    height: auto;
-}
-
-/* Service Info boxes */
-
-.services .svc-grid {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 60px 35px;
-    padding: 70px 60px 35px;
-}
-
-.services .svc-card {
-    grid-column: span 2;
-    background: #fff;
-    border: 1px solid #ddd;
-    min-width: 0;
-    overflow: hidden;
-}
-
-.services .svc-card:nth-child(4) {
-    grid-column: 2 / span 2;
-}
-
-.services .svc-card:nth-child(5) {
-    grid-column: 4 / span 2;
-}
-
-.services .svc-photo {
-    display: block;
     width: 100%;
-    height: 290px;
-    object-fit: cover;
-}
-
-.services .svc-body {
+    height: 1000px;
+    margin: 25px auto 0;
     display: flex;
     align-items: flex-start;
-    gap: 18px;
-    padding: 25px 20px 35px;
-}
-
-.services .svc-icon {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.services .svc-body > div {
-    flex: 1;
-    min-width: 0;
-}
-
-.services .svc-body h2 {
-    font-size: 25px;
-    font-weight: 700;
-    margin: 5px 0 18px;
-}
-
-.services .svc-copy {
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-.services .svc-copy p {
-    margin: 0 0 15px;
-}
-
-/* Get A Quote Button */
-
-.services .svc-quote {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    width: 80%;
-    max-width: 1500px;
-    min-height: 75px;
-    margin: 35px auto 55px;
-    padding: 15px 25px;
-    background: #51b30b;
-    color: #fff;
-    font-size: 28px;
-    border-radius: 100px;
-    text-decoration: underline;
 }
-
-.services .svc-quote:hover {
-    background: #419508;
+.r-track{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 211px;
+    margin-top: 76px;
 }
-
-.services .svc-rule {
-    display: block;
-    width: 90%;
-    height: auto;
-    margin: 0 auto 50px;
+.r-card{
+    margin: 0;
+    width: 500px;
+    height: 785px;
+    background: #70dc75;
+    border-radius: 15px;
+    /*border-style: solid; I was thinking about doing a solid border, but I think I like the look of the shadow more
+    border-color: #2d8239;*/
+    box-shadow: 0 0 5px 5px #70dc75;
+    padding: 90px 42px 0 39px;
+    position: relative;
+    font-size: 30px;
 }
-
-/* Responsive Services Layout */
-
-@media (max-width: 1100px) {
-    .services .svc-hero {
-        height: 500px;
-    }
-
-    .services .svc-hero-text {
-        padding: 80px 35px;
-    }
-
-    .services .svc-hero h1 {
-        font-size: 56px;
-    }
-
-    .services .svc-hero p {
-        font-size: 21px;
-    }
-
-    .services .svc-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
-        padding: 40px 25px;
-    }
-
-    .services .svc-card,
-    .services .svc-card:nth-child(4),
-    .services .svc-card:nth-child(5) {
-        grid-column: auto;
-    }
-
-    .services .svc-photo {
-        height: 230px;
-    }
-
-    .services .svc-body h2 {
-        font-size: 21px;
-    }
-
-    .services .svc-copy {
-        font-size: 15px;
-    }
+.r-card figcaption{
+    margin-top: 86px;
 }
-
-@media (max-width: 650px) {
-    .services .svc-hero {
-        height: 400px;
-    }
-
-    .services .svc-hero-text {
-        padding: 60px 20px;
-    }
-
-    .services .svc-hero h1 {
-        font-size: 42px;
-    }
-
-    .services .svc-hero p {
-        font-size: 17px;
-    }
-
-    .services .svc-grid {
-        grid-template-columns: 1fr;
-        padding: 30px 16px;
-    }
-
-    .services .svc-photo {
-        height: 220px;
-    }
-
-    .services .svc-body {
-        gap: 12px;
-        padding: 20px;
-    }
-
-    .services .svc-icon {
-        width: 55px;
-        height: 55px;
-    }
-
-    .services .svc-quote {
-        width: 90%;
-        min-height: 55px;
-        font-size: 20px;
-    }
+.r-card .stars{
+    position: absolute;
+    left: 0;
+    bottom: 46px;
+    width: 491px;
+}
+.r-arrow{
+    position: absolute;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 185px;
+    height: 58px;
+}
+.r-arrow.prev{
+    left: 32px;
+    top: 450px;
+}
+.r-arrow.prev img{
+    transform: rotate(180deg);
+}
+.r-arrow.next{
+    right: 32px;
+    top: 450px;
 }
