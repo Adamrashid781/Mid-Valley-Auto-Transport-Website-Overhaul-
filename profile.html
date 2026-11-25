@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<body class="profile">
+    <div class="page">
+        <header class="site-header light">
+            <nav class="nav" aria-label="Main">
+                <a class="nav-logo" href="index.html">
+                    <img src="assets/nav-logo-color.png" width="433" height="158" alt="Mid Valley Auto Transport Inc. - Home">
+                </a>
+                <ul class="nav-links">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="getquote.html">Get A Quote</a></li>
+                        <li><a href="termsandconditions.html">Terms &amp; Conditions</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <!--TODO: add an "if: logged in then: current page == profile", for now, i will 
+                        make it so the account button routes here, instead of accnt creation page. We also
+                        need to make "if logged in" checks for other pages so that the accnt page routes here-->
+                        <li><a href="profile.html">Account</a></li>
+                </ul>
+                <a class="nav-cta" href="contact.html">CONTACT</a>
+            </nav>
+        </header>
+        <main class="profile-main">
+            <div class="tabs">
+                <button class="tab active" data-tab="account-info">Account</button>
+                <button class="tab" data-tab="security-info">Security</button>
+                <button class="tab" data-tab="order-info">Orders</button>
+            </div>
+            <section class="panel" id="account-info">
+                <form>
+                    <div><label>Name/Organization<input type="text"></label></div>
+                    <div><label>Email<input type="email"></label></div>
+                    <div><label>Phone<input type="tel"></label></div>
+                    <div><label>Address<input type="text"></label></div>
+                    <div><label>Gate Pass<input type="file"></label></div>
+                </form>
+            </section>
+            <section class="panel" id="security-info">
+                <form>
+                    <h2>Password</h2>
+                    <input type="password"> <!--TODO: make it so that this pulls the pw from the DB, then you can reveal it, not type it in-->
+                    <div><a class="change-pw" href="password-reset-Enter-Email.html">CHANGE PASSWORD</a></div>
+                </form>
+            </section>
+            <section class="panel" id="order-info">
+                <ul class="order-list">
+                    <li>
+                        <details class="orders" name="order">
+                            <summary>CAR - DATE - STATUS <span>,</span></summary>
+                            <div class="order-details">
+                                <p>Pickup location: </p>
+                                <p>Dropoff location: </p>
+                                <p>Notes: </p>
+                                <p>Date/Time picked up: </p>
+                                <p>Date/Time dropped off: </p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <details class="orders" name="order">
+                            <summary>CAR - DATE - STATUS <span>,</span></summary>
+                            <div class="order-details">
+                                <p>Pickup location: </p>
+                                <p>Dropoff location: </p>
+                                <p>Notes: </p>
+                                <p>Date/Time picked up: </p>
+                                <p>Date/Time dropped off: </p>
+                            </div>
+                        </details>
+                    </li>
+                </ul>
+            </section>
+            <!--script for the buttons to work-->
+            <script>
+                //variables
+                const tabs = document.querySelectorAll('.tab');
+                const panels = document.querySelectorAll('.panel');
+                //function for buttons
+                function showPanel(name){
+                    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+                    panels.forEach(p => p.hidden = p.id !== name);
+                }
+                //add the button listeners
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => showPanel(tab.dataset.tab));
+                });
+                //show the account details panel first
+                showPanel('account-info');
+            </script>
+        </main>
+        <!--genuinely, how do you use this js file Sadam?-->
+        <!--<site-header></site-header>
+        <script src="layout.js"></script>-->
+    </div>
+</body>
+</html>
