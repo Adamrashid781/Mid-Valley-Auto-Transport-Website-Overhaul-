@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
-<!-- TODO: Add css style and design for the account page based on the website mockup-->
 <body class="account">
     <div class="page">
         <header class="site-header dark">
@@ -49,6 +48,7 @@
                     <input type="password" id="confirm-password" name="confirm-password" autocomplete="new-password" required>
                 </div>
 
+                <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
                 <button type="submit" class="btn-black create-btn">CREATE</button>
 
                 <p class="auth-alt">Already have an account?</p>
@@ -57,5 +57,6 @@
             </form>
         </main>
     </div>
+    <script src="js/authorize.js"></script>
 </body>
 </html>
